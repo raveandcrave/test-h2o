@@ -2,11 +2,11 @@ import "./styles.scss";
 import cn from "classnames";
 
 import numberWithSpaces from "../../helpers/numberWithSpaces";
-import { DivisionName, useDivisionStore } from "../../hooks/useDivisionStore";
+import { DivisionType, useDivisionStore } from "../../hooks/useDivisionStore";
 import ArrowIcon from "../../icons/arrow.svg?react";
 
 interface ResultsBlockProps {
-  division: DivisionName;
+  division: DivisionType;
   amount: number;
   percent: number;
 }
@@ -16,13 +16,13 @@ const ResultsBlock: React.FC<ResultsBlockProps> = ({
   amount,
   percent,
 }) => {
-  const { activeDivision, setActiveDivision } = useDivisionStore();
-  const isActive = division === activeDivision;
+  const { activeDivisionType, setActiveDivisionType } = useDivisionStore();
+  const isActive = division === activeDivisionType;
   const isNegative = amount < 0;
 
   return (
     <div
-      onClick={() => setActiveDivision(division)}
+      onClick={() => setActiveDivisionType(division)}
       className={cn("result-block", { "result-block--active": isActive })}
     >
       <p

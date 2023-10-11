@@ -1,30 +1,29 @@
 import { create } from "zustand";
 
-const defaultDivisions: Division[] = [
-  {
-    name: "B2B",
-    amount: 8615253,
-    percent: 43.7,
-  },
-  { name: "B2C", amount: -1542511, percent: -13.7 },
-];
+const defaultDivisionData = [] as Division[];
+const defaultDivisionTypes: DivisionType[] = ["summary", "B2B", "B2C"];
 
-export type DivisionName = "B2B" | "B2C" | "summary";
+export type DivisionType = "B2B" | "B2C" | "summary";
 
 export interface Division {
-  name: DivisionName;
+  divisionType: DivisionType;
   amount: number;
-  percent: number;
+  date: string;
+  type: string;
 }
 
 interface DivisionStore {
-  divisions: Division[];
-  activeDivision: DivisionName;
-  setActiveDivision: (name: DivisionName) => void;
+  divisionTypes: DivisionType[];
+  divisionData: Division[];
+  activeDivisionType: DivisionType;
+  setActiveDivisionType: (name: DivisionType) => void;
+  setDivisionData: (data: Division[]) => void;
 }
 
 export const useDivisionStore = create<DivisionStore>((set) => ({
-  divisions: defaultDivisions,
-  activeDivision: "summary",
-  setActiveDivision: (name) => set({ activeDivision: name }),
+  divisionTypes: defaultDivisionTypes,
+  divisionData: defaultDivisionData,
+  activeDivisionType: "summary",
+  setActiveDivisionType: (name) => set({ activeDivisionType: name }),
+  setDivisionData: (data) => set({ divisionData: data }),
 }));
