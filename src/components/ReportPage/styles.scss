@@ -2,4 +2,17 @@
   padding: 28px 40px;
   background-color: var(--color-gray-bg);
   border-radius: var(--radius-lg);
+
+  &__title {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.57;
+    margin-bottom: 19px;
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 2fr 1fr;
+  }
 }
