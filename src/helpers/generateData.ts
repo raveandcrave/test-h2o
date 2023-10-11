@@ -1,4 +1,4 @@
-import { Division } from "../hooks/useDivisionStore";
+import { Division } from "@/hooks/useDivisionStore";
 import { randomNumber } from "./randomNumber";
 
 export const types = [

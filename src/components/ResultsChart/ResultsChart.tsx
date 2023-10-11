@@ -1,8 +1,8 @@
 import "./styles.scss";
 
-import LineChart from "../LineChart/LineChart";
-import { types } from "../../helpers/generateData";
-import { useDivisionStore } from "../../hooks/useDivisionStore";
+import LineChart from "@/components/LineChart/LineChart";
+import { types } from "@/helpers/generateData";
+import { useDivisionStore } from "@/hooks/useDivisionStore";
 
 const ResultsChart = () => {
   const divisionData = useDivisionStore((state) => state.divisionData);

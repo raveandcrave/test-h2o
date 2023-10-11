@@ -2,10 +2,10 @@ import "./styles.scss";
 import { useEffect } from "react";
 import dayjs from "dayjs";
 
-import ProblemZones from "../ProblemZones";
-import Results from "../Results";
-import { useDivisionStore } from "../../hooks/useDivisionStore";
-import { generateDivisionData } from "../../helpers/generateData";
+import ProblemZones from "@/components//ProblemZones";
+import Results from "@/components/Results";
+import { useDivisionStore } from "@/hooks/useDivisionStore";
+import { generateDivisionData } from "@/helpers/generateData";
 
 const ReportPage = () => {
   const setDivisionData = useDivisionStore((state) => state.setDivisionData);

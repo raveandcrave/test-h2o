@@ -1,8 +1,8 @@
 import "./App.scss";
 
-import Header from "./components/Header";
-import ReportPage from "./components/ReportPage";
-import Sidebar from "./components/Sidebar";
+import Header from "@/components/Header";
+import ReportPage from "@/components/ReportPage";
+import Sidebar from "@/components/Sidebar";
 
 function App() {
   return (

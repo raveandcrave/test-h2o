@@ -1,12 +1,12 @@
 import "./styles.scss";
 
-import ResultsBlock from "../ResultsBlock";
-import ResultsChart from "../ResultsChart";
+import ResultsBlock from "@/components/ResultsBlock";
+import ResultsChart from "@/components/ResultsChart";
 import {
   Division,
   DivisionType,
   useDivisionStore,
-} from "../../hooks/useDivisionStore";
+} from "@/hooks/useDivisionStore";
 
 const Results = () => {
   const divisionsTypes = useDivisionStore((state) => state.divisionTypes);

@@ -1,7 +1,7 @@
 import "./styles.scss";
 
+import Menu from "@/components/Menu";
 import LogoIcon from "../../icons/logo.svg?react";
-import Menu from "../Menu";
 
 const Sidebar = () => {
   return (
