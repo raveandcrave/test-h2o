@@ -1,0 +1,26 @@
+.menu {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__list-item {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background 0.2s linear;
+
+    &:hover:not(.menu__list-item--active) {
+      background-color: rgba(169, 233, 224, 0.3);
+    }
+
+    &--active {
+      background-color: rgba(169, 233, 224, 0.75);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.sidebar {
+  height: 100%;
+  position: fixed;
+  left: 0;
+  z-index: 1;
+  width: 128px;
+  border-radius: var(--radius-lg) 0px 0px var(--radius-lg);
+  background: linear-gradient(180deg, #54d3c2 0%, #30898a 100%);
+  padding: 55px 32px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}

@@ -1,0 +1,11 @@
+.main {
+  min-height: 100vh;
+  margin-left: 128px;
+  background: linear-gradient(180deg, #54d3c2 0%, #30898a 100%);
+
+  &__inner {
+    background-color: var(--color-white);
+    min-height: 100vh;
+    border-radius: var(--radius-lg);
+  }
+}
