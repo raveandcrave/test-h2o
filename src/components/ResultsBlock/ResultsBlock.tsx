@@ -2,7 +2,8 @@ import "./styles.scss";
 import cn from "classnames";
 
 import numberWithSpaces from "@/helpers/numberWithSpaces";
-import { DivisionType, useDivisionStore } from "@/hooks/useDivisionStore";
+import { useDivisionStore } from "@/hooks/useDivisionStore";
+import { DivisionType } from "@/types";
 import ArrowIcon from "../../icons/arrow.svg?react";
 
 interface ResultsBlockProps {

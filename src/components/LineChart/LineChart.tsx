@@ -20,6 +20,7 @@ ChartJS.register(
   LineElement
 );
 
+//@ts-ignore
 const LineChart = ({ data }) => {
   const getOrCreateTooltip = (chart: ChartJS) => {
     let tooltipEl = chart.canvas.parentNode!.querySelector("div");
@@ -46,6 +47,7 @@ const LineChart = ({ data }) => {
     return tooltipEl;
   };
 
+  //@ts-ignore
   const externalTooltipHandler = (context) => {
     // Tooltip Element
     const { chart, tooltip } = context;
