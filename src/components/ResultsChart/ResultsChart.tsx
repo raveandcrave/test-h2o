@@ -1,5 +1,6 @@
 import "./styles.scss";
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 import LineChart from "@/components/LineChart/LineChart";
 import { types } from "@/helpers/generateData";
@@ -77,9 +78,22 @@ const ResultsChart = () => {
       <div className="results-chart__header">
         <h2 className="results-chart__title">Общая статистика</h2>
         <div className="results-chart__tabs">
-          <div className="results-chart__tabs-item">Неделя</div>
-          <div className="results-chart__tabs-item">Месяц</div>
-          <div className="results-chart__tabs-item results-chart__tabs-item--active">
+          <div
+            className="results-chart__tabs-item"
+            onClick={() => toast("Функционал в разработке")}
+          >
+            Неделя
+          </div>
+          <div
+            className="results-chart__tabs-item"
+            onClick={() => toast("Функционал в разработке")}
+          >
+            Месяц
+          </div>
+          <div
+            className="results-chart__tabs-item results-chart__tabs-item--active"
+            onClick={() => toast("Функционал в разработке")}
+          >
             Год
           </div>
         </div>

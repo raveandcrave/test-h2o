@@ -1,5 +1,6 @@
 import "./styles.scss";
 import cn from "classnames";
+import { toast } from "react-toastify";
 
 import CalendarIcon from "./icons/calendar.svg?react";
 import ListIcon from "./icons/list.svg?react";
@@ -26,6 +27,7 @@ const Menu = () => {
         {MENU.map((item, i) => (
           <li
             key={i}
+            onClick={() => toast("Функционал в разработке")}
             className={cn("menu__list-item", {
               "menu__list-item--active": item.isActive,
             })}

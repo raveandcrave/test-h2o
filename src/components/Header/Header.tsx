@@ -1,4 +1,7 @@
 import "./styles.scss";
+
+import { toast } from "react-toastify";
+
 import avatar from "./avatar.jpg";
 import PlayArrowIcon from "../../icons/play-arrow.svg?react";
 import DropdownIcon from "../../icons/dropdown.svg?react";
@@ -8,10 +11,16 @@ const Header = () => {
     <header className="header">
       <div className="tabs">
         <div className="tabs__buttons">
-          <button className="tabs__buttons-item">
+          <button
+            onClick={() => toast("Функционал в разработке")}
+            className="tabs__buttons-item"
+          >
             <PlayArrowIcon className="tabs__buttons-icon-left" />
           </button>
-          <button className="tabs__buttons-item">
+          <button
+            onClick={() => toast("Функционал в разработке")}
+            className="tabs__buttons-item"
+          >
             <PlayArrowIcon className="tabs__buttons-icon-right" />
           </button>
         </div>
@@ -29,7 +38,10 @@ const Header = () => {
           <p className="user__name">Kristina 🐰</p>
           <p className="user__role">менеджер продаж</p>
         </div>
-        <DropdownIcon className="user__dropdown" />
+        <DropdownIcon
+          onClick={() => toast("Функционал в разработке")}
+          className="user__dropdown"
+        />
       </div>
     </header>
   );
