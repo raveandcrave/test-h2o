@@ -2,7 +2,7 @@ import "./styles.scss";
 
 import ResultsBlock from "@/components/ResultsBlock";
 import ResultsChart from "@/components/ResultsChart";
-import { randomNumber } from "@/helpers/randomNumber";
+import randomNumber from "@/helpers/randomNumber";
 import { Division, useDivisionStore } from "@/hooks/useDivisionStore";
 import { DivisionType } from "@/types";
 

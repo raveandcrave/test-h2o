@@ -1,4 +1,56 @@
 .problem-zones {
   background-color: var(--color-white);
   border-radius: var(--radius-md);
+  padding: 32px;
+
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.56px;
+    margin-bottom: 11px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    border-radius: 50%;
+
+    &--red {
+      background-color: var(--color-red);
+    }
+
+    &--orange {
+      background-color: var(--color-orange);
+    }
+  }
+
+  &__label {
+    color: #6d7986;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.56px;
+    line-height: 1.28;
+  }
+
+  &__amount {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
 }

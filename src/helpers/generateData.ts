@@ -1,5 +1,5 @@
 import { Division } from "@/hooks/useDivisionStore";
-import { randomNumber } from "./randomNumber";
+import randomNumber from "./randomNumber";
 import { MoneyOperation } from "@/types";
 
 export const types: MoneyOperation[] = [
