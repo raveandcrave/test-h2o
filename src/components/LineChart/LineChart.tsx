@@ -21,6 +21,94 @@ ChartJS.register(
 );
 
 const LineChart = ({ data }) => {
+  const getOrCreateTooltip = (chart: ChartJS) => {
+    let tooltipEl = chart.canvas.parentNode!.querySelector("div");
+
+    if (!tooltipEl) {
+      tooltipEl = document.createElement("div");
+      tooltipEl.style.background = "#ffffff";
+      tooltipEl.style.borderRadius = "6px";
+      tooltipEl.style.border = "2px solid #323F47";
+      tooltipEl.style.color = "#323F47";
+      tooltipEl.style.opacity = "1";
+      tooltipEl.style.pointerEvents = "none";
+      tooltipEl.style.position = "absolute";
+      tooltipEl.style.transform = "translate(-50%, 0)";
+      tooltipEl.style.transition = "all .1s ease";
+
+      const table = document.createElement("table");
+      table.style.margin = "0px";
+
+      tooltipEl.appendChild(table);
+      chart.canvas.parentNode!.appendChild(tooltipEl);
+    }
+
+    return tooltipEl;
+  };
+
+  const externalTooltipHandler = (context) => {
+    // Tooltip Element
+    const { chart, tooltip } = context;
+    const tooltipEl = getOrCreateTooltip(chart);
+
+    // Hide if no tooltip
+    if (tooltip.opacity === 0) {
+      tooltipEl.style.opacity = "0";
+      return;
+    }
+
+    // Set Text
+    if (tooltip.body) {
+      const bodyLines: string[] = tooltip.body.map(
+        (b: Record<string, string[]>) => b.lines
+      );
+
+      const tableBody = document.createElement("tbody");
+
+      bodyLines.forEach((body, i) => {
+        const colors = tooltip.labelColors[i];
+
+        const tr = document.createElement("tr");
+        tr.style.backgroundColor = "inherit";
+        tr.style.borderWidth = "0";
+
+        const td = document.createElement("td");
+        td.style.borderWidth = "0";
+        td.style.color = colors.borderColor;
+        td.style.fontSize = "18px";
+        td.style.fontWeight = "600";
+        td.style.fontFamily =
+          "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;";
+
+        const text = document.createTextNode(body);
+
+        td.appendChild(text);
+        tr.appendChild(td);
+        tableBody.appendChild(tr);
+      });
+
+      const tableRoot = tooltipEl.querySelector("table");
+
+      // Remove old children
+      while (tableRoot?.firstChild) {
+        tableRoot.firstChild.remove();
+      }
+
+      // Add new children
+      tableRoot?.appendChild(tableBody);
+    }
+
+    const { offsetLeft: positionX, offsetTop: positionY } = chart.canvas;
+
+    // Display, position, and set styles for font
+    tooltipEl.style.opacity = "1";
+    tooltipEl.style.left = positionX + tooltip.caretX + "px";
+    tooltipEl.style.top = positionY + tooltip.caretY + "px";
+    tooltipEl.style.font = tooltip.options.bodyFont.string;
+    tooltipEl.style.padding =
+      tooltip.options.padding + "px " + tooltip.options.padding + "px";
+  };
+
   return (
     <Line
       datasetIdKey="label"
@@ -45,13 +133,8 @@ const LineChart = ({ data }) => {
             display: false,
           },
           tooltip: {
-            backgroundColor: "#ffffff",
-            titleColor: "#323f47",
-            bodyColor: "#323f47",
-            // callbacks: {
-            //   title: (tooltip) => "",
-            //   label: () => "",
-            // },
+            enabled: false,
+            external: externalTooltipHandler,
           },
         },
       }}
