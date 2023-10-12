@@ -2,6 +2,7 @@ import "./styles.scss";
 
 import ResultsBlock from "@/components/ResultsBlock";
 import ResultsChart from "@/components/ResultsChart";
+import { randomNumber } from "@/helpers/randomNumber";
 import { Division, useDivisionStore } from "@/hooks/useDivisionStore";
 import { DivisionType } from "@/types";
 
@@ -34,7 +35,7 @@ const Results = () => {
           <ResultsBlock
             key={divisionType}
             amount={yearAmount[divisionType]}
-            percent={50}
+            percent={Math.sign(yearAmount[divisionType]) * randomNumber(10, 80)}
             division={divisionType}
           />
         ))}

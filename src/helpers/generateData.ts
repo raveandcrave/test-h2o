@@ -25,7 +25,7 @@ export const generateDivisionData = (dates: string[]): Division[] => {
       const b2c: Division = {
         date,
         type: type.name,
-        amount: type.name === "debt" ? 0 : randomNumber(-150000, 400000),
+        amount: type.name === "debt" ? 0 : randomNumber(-150000, 150000),
         divisionType: "B2C",
       };
 
