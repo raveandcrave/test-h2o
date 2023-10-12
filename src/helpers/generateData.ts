@@ -1,7 +1,8 @@
 import { Division } from "@/hooks/useDivisionStore";
 import { randomNumber } from "./randomNumber";
+import { MoneyOperation } from "@/types";
 
-export const types = [
+export const types: MoneyOperation[] = [
   { name: "revenue", color: "hsla(125, 49%, 63%, 1)", nameRu: "Выручка" },
   { name: "expanses", color: "hsla(187, 71%, 53%, 1)", nameRu: "Затраты" },
   { name: "income", color: "hsla(205, 87%, 61%, 1)", nameRu: "Прибыль" },

@@ -1,15 +1,15 @@
 import { create } from "zustand";
 
+import { DivisionType, MoneyOperationType } from "@/types";
+
 const defaultDivisionData = [] as Division[];
 const defaultDivisionTypes: DivisionType[] = ["summary", "B2B", "B2C"];
-
-export type DivisionType = "B2B" | "B2C" | "summary";
 
 export interface Division {
   divisionType: DivisionType;
   amount: number;
   date: string;
-  type: string;
+  type: MoneyOperationType;
 }
 
 interface DivisionStore {
